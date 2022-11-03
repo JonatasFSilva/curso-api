@@ -46,7 +46,7 @@ public class Curso {
 	@Column(name = "data_de_criacao")
 	private LocalDateTime datadeCriacao;
 
-	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
 	@UpdateTimestamp
 	@Column(name = "data_de_atualizacao")
 	private LocalDateTime dataDeAtualizacao;

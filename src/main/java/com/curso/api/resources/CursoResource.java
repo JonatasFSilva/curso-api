@@ -23,5 +23,6 @@ public class CursoResource {
 		List<Curso> lista = cursoService.getCursos();
 		return ResponseEntity.ok().body(lista);
 	}
-
+	
+	public ResponseEntity<Curso> saveCurso(){};
 }
