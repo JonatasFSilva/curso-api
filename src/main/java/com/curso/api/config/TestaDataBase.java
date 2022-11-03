@@ -9,7 +9,7 @@ import com.curso.api.entities.Curso;
 import com.curso.api.repositories.CursoRepository;
 
 @Component
-@Profile(value = "default")
+@Profile(value = "test")
 public class TestaDataBase implements CommandLineRunner {
 
 	@Autowired
