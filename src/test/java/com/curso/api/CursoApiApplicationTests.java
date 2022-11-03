@@ -19,9 +19,9 @@ class CursoApiApplicationTests {
 	void contextLoads() {
 
 		List<Curso> cursos = cursoService.getCursos();
-
+		
 		System.out.println("CURSO: ");
-		System.out.println(cursos);
+		cursos.forEach(c -> System.out.println(c));
 	}
 
 }

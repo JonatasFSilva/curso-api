@@ -26,11 +26,13 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Table(name = "curso")
 @Data
 @NoArgsConstructor
+@ToString
 public class Curso implements Serializable {
 
 	private static final long serialVersionUID = 1L;
