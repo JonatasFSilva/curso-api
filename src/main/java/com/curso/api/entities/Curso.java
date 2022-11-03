@@ -21,6 +21,8 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -39,10 +41,12 @@ public class Curso {
 	@Column(nullable = false)
 	private String area;
 
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	@CreationTimestamp
 	@Column(name = "data_de_criacao")
 	private LocalDateTime datadeCriacao;
 
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	@UpdateTimestamp
 	@Column(name = "data_de_atualizacao")
 	private LocalDateTime dataDeAtualizacao;
