@@ -21,4 +21,9 @@ public class CursoServiceImpl implements CursoService{
 		return cursoRepository.findAll();
 	}
 
+	@Override
+	public Curso saveCurso(Curso curso) {
+		return cursoRepository.save(curso);
+	}
+
 }

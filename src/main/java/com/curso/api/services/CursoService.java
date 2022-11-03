@@ -7,5 +7,6 @@ import com.curso.api.entities.Curso;
 public interface CursoService {
 	
 	public List<Curso> getCursos();
-
+	
+	public Curso saveCurso(Curso curso);
 }

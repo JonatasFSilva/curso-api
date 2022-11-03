@@ -74,7 +74,7 @@ public class Curso {
 	// METODO UTILIZADO ANTES DA CRIACAO DO OBJETO
 	@PrePersist
 	private void antesDePersistirDados() {
-		this.usuario = "Admin";
+		this.usuario = "admin";
 	}
 
 	public Curso(String nome, String area) {
