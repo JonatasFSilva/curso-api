@@ -67,7 +67,7 @@ public class CursoResource {
 
 	// METODOS POST
 
-	@PostMapping("/salva") // SALVA UM OBJETO DTO NO BANCO DE DADOS
+	@PostMapping // SALVA UM OBJETO DTO NO BANCO DE DADOS
 	public ResponseEntity<Curso> saveCurso(@Valid @RequestBody CursoDTO dto) throws URISyntaxException {
 
 		// CRIA UMA ENTIDADE QUE POSSUE OS CAMPOS DO BD, MAS RECEBENDO SOMENTE OS
@@ -76,6 +76,6 @@ public class CursoResource {
 		// PARA QUE A INFORMACAO POSSA IR PRO BANCO DE DADOS DE FORMA QUE O SISTEMA
 		// ENTENDA COM UM DADO DO TIPO ENTIDADE
 		Curso newCurso = cursoService.saveCurso(mapper.mapCursoDtoToCurso(dto));
-		return ResponseEntity.created(new URI("/cursos/salva/" + newCurso.getId())).body(newCurso);
+		return ResponseEntity.created(new URI("/cursos/" + newCurso.getId())).body(newCurso);
 	}
 }

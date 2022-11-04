@@ -24,6 +24,7 @@ public class CursoServiceImpl implements CursoService {
 
 	@Override
 	public Curso saveCurso(Curso curso) {
+		curso.setId(null);
 		return cursoRepository.save(curso);
 	}
 
