@@ -50,4 +50,10 @@ public class CursoServiceImpl implements CursoService {
 		return cursoRepository.findByAreaContaining(area);
 	}
 
+	@Override
+	public void updateCurso(Curso curso) {
+
+		cursoRepository.save(curso);
+	}
+
 }

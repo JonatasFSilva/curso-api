@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -58,9 +59,9 @@ public class CursoResource {
 		List<Curso> findCursos = cursoService.findByNomeContaining(nome);
 		return ResponseEntity.ok().body(findCursos);
 	}
-	
+
 	@GetMapping("/area/{area}")
-	public ResponseEntity<List<Curso>> findCursoByAreaContendo(@PathVariable String area){
+	public ResponseEntity<List<Curso>> findCursoByAreaContendo(@PathVariable String area) {
 		List<Curso> findArea = cursoService.findByAreaContaining(area);
 		return ResponseEntity.ok().body(findArea);
 	}
@@ -77,5 +78,16 @@ public class CursoResource {
 		// ENTENDA COM UM DADO DO TIPO ENTIDADE
 		Curso newCurso = cursoService.saveCurso(mapper.mapCursoDtoToCurso(dto));
 		return ResponseEntity.created(new URI("/cursos/" + newCurso.getId())).body(newCurso);
+	}
+
+	// METODO PUT
+
+	@PutMapping("/{id}")
+	public ResponseEntity<Curso> updateCurso(@PathVariable Integer id, @RequestBody CursoDTO dto)
+			throws URISyntaxException {
+		Curso curso = mapper.mapCursoDtoToCurso(dto);
+		curso.setId(id);
+		cursoService.updateCurso(curso);
+		return ResponseEntity.noContent().build();
 	}
 }

@@ -17,4 +17,6 @@ public interface CursoService {
 	public List<Curso> findByNomeContaining(String nome);
 
 	public List<Curso> findByAreaContaining(String area);
+
+	public void Curso updateCurso(Curso curso);
 }
