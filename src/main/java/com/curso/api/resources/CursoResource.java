@@ -83,8 +83,7 @@ public class CursoResource {
 	// METODO PUT
 
 	@PutMapping("/{id}")
-	public ResponseEntity<Curso> updateCurso(@PathVariable Integer id, @RequestBody CursoDTO dto)
-			throws URISyntaxException {
+	public ResponseEntity<Curso> updateCurso(@PathVariable Integer id, @RequestBody CursoDTO dto) {
 		Curso curso = mapper.mapCursoDtoToCurso(dto);
 		curso.setId(id);
 		cursoService.updateCurso(curso);
