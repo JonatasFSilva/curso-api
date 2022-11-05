@@ -19,4 +19,6 @@ public interface CursoService {
 	public List<Curso> findByAreaContaining(String area);
 
 	public void updateCurso(Curso curso);
+
+	public void deleteCurso(Integer id);
 }

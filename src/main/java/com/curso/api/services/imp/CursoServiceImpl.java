@@ -52,13 +52,18 @@ public class CursoServiceImpl implements CursoService {
 
 	@Override
 	public void updateCurso(Curso curso) {
-		
+
 		Curso atual = this.findById(curso.getId());
-		
+
 		atual.setNome(curso.getNome());
 		atual.setArea(curso.getArea());
 
 		cursoRepository.save(atual);
+	}
+
+	@Override
+	public void deleteCurso(Integer id) {
+		cursoRepository.deleteById(id);
 	}
 
 }
